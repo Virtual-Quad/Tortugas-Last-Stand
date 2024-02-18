@@ -13,10 +13,11 @@ Repository for hosting the Godot project for Tortuga's Last Stand.
 2. Choose a task that you are interested in, assign yourself, and move it to in-progress.
 3. Open a terminal in the `Tortugas-Last-Stand` folder.
 4. Read up on the Git Basics section below or ask questions if you are unfamiliar with Git.
-5. Branch off of main, and create a new branch in this format: `dev/IssueNumber-Issue_Name_or_Description`
-6. Example: `dev/A1.1-Character_Movement`
-7. Checkout to your newly created branch, work on your branch, and when you finish the task, open a pull request and get two approvals, and mention the issue number in your pull request.
-8. When you receive two approvals, squash and merge your pull request, and put the Github issue # of your task in the front of the merge message.
+5. Branch off of main, and create a new branch in this format: `feature/IssueNumber-Issue_Name_or_Description` or `leaf/IssueNumber-Issue_Name_or_Description`
+6. Example: `feature/A1.1-Character_Movement` or `leaf/A1.1-Character_Movement`
+7. Do NOT use `dev/` as a pre-fix for your branch name.
+8. Checkout to your newly created branch, work on your branch, and when you finish the task, open a pull request and get two approvals, and mention the issue number in your pull request.
+9. When you receive two approvals, squash and merge your pull request, and put the Github issue # of your task in the front of the merge message.
 
 # Getting Help
 1. Do not be afraid to ask questions.
