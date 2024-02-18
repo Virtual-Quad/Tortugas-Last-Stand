@@ -34,3 +34,9 @@ Repository for hosting the Godot project for Tortuga's Last Stand.
 - When you finish your task, open up a pull request to merge your changes into main.
 - From here, get at least one approval, make any necessary changes, and squash and merge your changes, and place the issue number for the task you worked on in front of the merge message.
 - Once merged, delete the branch, and close your issue.
+
+# Testing with GUT
+- This project will have unit testing using the [GUT framework](https://gut.readthedocs.io/en/latest/Quick-Start.html).
+- I would recommend trying to write unit tests for applicable code (but that doesn't mean you have to write one for every single function)!
+- For some examples and tips, I would suggest reading some comments from this [reddit post](https://www.reddit.com/r/godot/comments/xbzx3g/the_godot_unit_testing_gut_library_is_pretty_good/).
+- A general idea would be you would write your test first to fail, then write your code to pass that test, then refactor the code to be better while still passing.
