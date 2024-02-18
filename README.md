@@ -2,7 +2,7 @@
 Repository for hosting the Godot project for Tortuga's Last Stand.
 
 # Project Set-up
-1. Download Godot 4.2.1 for your pc from the [Godot home page](https://github.com/godotengine/godot/releases).
+1. Download the latest version of Godot from the [Godot home page](https://godotengine.org/).
 2. Install git from the [Git website](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git).
 3. Open a terminal (I use [Hyper](https://hyper.is/) but you can use the normal command line) in the folder you would like to store the repository in.
 4. Clone the project repository with `git clone https://github.com/Virtual-Quad/Tortugas-Last-Stand.git`
@@ -13,9 +13,9 @@ Repository for hosting the Godot project for Tortuga's Last Stand.
 2. Choose a task that you are interested in, assign yourself, and move it to in-progress.
 3. Open a terminal in the `Tortugas-Last-Stand` folder.
 4. Read up on the Git Basics section below or ask questions if you are unfamiliar with Git.
-5. Branch off of main, and create a new branch in this format: `feature/IssueNumber-Issue_Name_or_Description` or `leaf/IssueNumber-Issue_Name_or_Description`
+5. Branch off of dev, and create a new branch in this format: `feature/IssueNumber-Issue_Name_or_Description` or `leaf/IssueNumber-Issue_Name_or_Description`
 6. Example: `feature/A1.1-Character_Movement` or `leaf/A1.1-Character_Movement`
-7. Do NOT use `dev/` as a pre-fix for your branch name.
+7. Do NOT use `dev/` or `main/` as a pre-fix for your branch name.
 8. Checkout to your newly created branch, work on your branch, and when you finish the task, open a pull request and get two approvals, and mention the issue number in your pull request.
 9. When you receive two approvals, squash and merge your pull request, and put the Github issue # of your task in the front of the merge message.
 
@@ -31,9 +31,10 @@ Repository for hosting the Godot project for Tortuga's Last Stand.
 - Use `git add .` to add all your changes to be committed.
 - Use `git commit -m "Your message here"` to make a commit and add a message along with it. (Any time you make a decent amount of changes, you should commit it with a descriptive message).
 - Use `git push` to push your changes to your current branch.
-- When you finish your task, open up a pull request to merge your changes into main.
+- When you finish your task, open up a pull request to merge your changes into dev.
 - From here, get at least one approval, make any necessary changes, and squash and merge your changes, and place the issue number for the task you worked on in front of the merge message.
 - Once merged, delete the branch, and close your issue.
+- Upon certain intervals, possibly every week or two, dev will be merged into main.
 
 # Testing with GUT
 - This project will have unit testing using the [GUT framework](https://gut.readthedocs.io/en/latest/Quick-Start.html).
