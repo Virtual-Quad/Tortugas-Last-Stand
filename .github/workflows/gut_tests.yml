@@ -1,56 +1,46 @@
 name: Run GUT Tests
-
 on:
     push:
         branches: [main, develop]
     pull_request:
         branches: [main, develop]
     workflow_dispatch:
-
 env:
     GODOT_VERSION: "4.4.1"
     TEST_DIR: "res://test"
-
 permissions:
     contents: read
     actions: read
     checks: write
     pull-requests: write
-
 jobs:
     test:
         runs-on: ubuntu-latest
-
         steps:
             - name: Checkout repository
               uses: actions/checkout@v4
               with:
                   lfs: true
-
             - name: Setup Godot
               uses: lihop/setup-godot@v2
               with:
                   version: ${{ env.GODOT_VERSION }}
-
             - name: Import project
               run: |
                   # Import the project to generate .godot folder and import all assets
                   timeout 300 godot --headless --import --quit || true
-
-            - name: Run GUT Unit tests
+            - name: Run GUT tests
               run: |
                   # Create output directory for test results
                   mkdir -p test_output
-
                   # Run GUT tests with various output options
-                  godot --headless --script addons/gut/gut_cmdln.gd 
+                  godot --headless --script addons/gut/gut_cmdln.gd \
                     -gdir=${{ env.TEST_DIR }} \
                     -ginclude_subdirs \
                     -gexit \
                     -glog=2 \
                     -gjunit_xml_file=test_output/junit_results.xml \
                     -gxml_file=test_output/gut_results.xml
-
             - name: Parse test results
               if: always()
               run: |
@@ -63,7 +53,6 @@ jobs:
                   else
                     echo "No test results file found"
                   fi
-
             - name: Upload test results
               if: always()
               uses: actions/upload-artifact@v4
@@ -73,9 +62,8 @@ jobs:
                       test_output/
                       .gutconfig.json
                   retention-days: 30
-
             - name: Publish test results
-              if: always()
+              if: always() && github.event_name == 'pull_request'
               uses: dorny/test-reporter@v1
               with:
                   name: GUT Test Results
