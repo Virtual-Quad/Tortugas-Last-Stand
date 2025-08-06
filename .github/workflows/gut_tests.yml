@@ -39,8 +39,7 @@ jobs:
                     -ginclude_subdirs \
                     -gexit \
                     -glog=2 \
-                    -gjunit_xml_file=test_output/junit_results.xml \
-                    -gxml_file=test_output/gut_results.xml
+                    -gjunit_xml_file=test_output/junit_results.xml
             - name: Parse test results
               if: always()
               run: |
