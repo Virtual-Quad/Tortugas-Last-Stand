@@ -9,7 +9,7 @@ on:
 
 env:
     GODOT_VERSION: "4.4.1"
-    TEST_DIR: "res://test"
+    TEST_DIR: "res://test/unit"
 
 jobs:
     test:
@@ -38,13 +38,13 @@ jobs:
                   # Import the project to generate .godot folder and import all assets
                   timeout 300 godot --headless --import --quit || true
 
-            - name: Run GUT tests
+            - name: Run GUT Unit tests
               run: |
                   # Create output directory for test results
                   mkdir -p test_output
 
                   # Run GUT tests with various output options
-                  godot --headless --script addons/gut/gut_cmdln.gd \
+                  godot --headless --script addons/gut/gut_cmdln.gd 
                     -gdir=${{ env.TEST_DIR }} \
                     -ginclude_subdirs \
                     -gexit \
