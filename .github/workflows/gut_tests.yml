@@ -9,7 +9,7 @@ on:
 
 env:
     GODOT_VERSION: "4.4.1"
-    TEST_DIR: "res://test/unit"
+    TEST_DIR: "res://test"
 
 jobs:
     test:
@@ -25,13 +25,6 @@ jobs:
               uses: lihop/setup-godot@v2
               with:
                   version: ${{ env.GODOT_VERSION }}
-
-            - name: Verify GUT installation
-              run: |
-                  if [ ! -d "addons/gut" ]; then
-                    echo "Error: GUT addon not found in addons/gut directory"
-                    exit 1
-                  fi
 
             - name: Import project
               run: |
