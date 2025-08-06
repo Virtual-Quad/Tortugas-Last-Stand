@@ -18,7 +18,7 @@ jobs:
               with:
                   name: Tortuga's Last Stand
                   preset: ${{ matrix.platform }}
-                  debugMode: "true"
+                  debugMode: "false"
             - name: Upload Artifact
               uses: actions/upload-artifact@v4
               with:
