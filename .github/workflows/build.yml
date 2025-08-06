@@ -28,7 +28,7 @@ jobs:
             - name: Windows Build
               run: |
                   mkdir -v -p build/windows
-                  godot --headless --verbose --export-release "windows" build/windows/game.exe
+                  godot --headless --verbose --export-release "windows" build/windows/CannonDefense.exe
             - name: Upload Artifact
               uses: actions/upload-artifact@v4
               with:
