@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://ypvlm1ywvg3u"]
+
+[ext_resource type="Script" uid="uid://cx772lxj3svjt" path="res://scripts/cannon.gd" id="1_xuqfy"]
+
+[node name="Cannon" type="Node2D" node_paths=PackedStringArray("cannonSprite")]
+script = ExtResource("1_xuqfy")
+cannonSprite = NodePath("AnimatedSprite2D")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
