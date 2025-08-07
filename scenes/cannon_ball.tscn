@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://b14kdnvcfl8ng"]
+
+[ext_resource type="Script" uid="uid://ctaeaqgvbbpfx" path="res://scripts/cannon_ball.gd" id="1_4105j"]
+[ext_resource type="Texture2D" uid="uid://blmogw0iqq1qm" path="res://sprites/cannon-ball.png" id="2_tqdv6"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jlhnd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_tqdv6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tqdv6"]
+radius = 54.0833
+
+[node name="CannonBall" type="Node2D" node_paths=PackedStringArray("cannon_ball_sprite", "life_timer")]
+script = ExtResource("1_4105j")
+cannon_ball_sprite = NodePath("AnimatedSprite2D")
+life_timer = NodePath("LifeTimer")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_jlhnd")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -2)
+shape = SubResource("CircleShape2D_tqdv6")
+
+[node name="LifeTimer" type="Timer" parent="."]
+
+[connection signal="timeout" from="LifeTimer" to="." method="_on_life_timer_timeout"]
