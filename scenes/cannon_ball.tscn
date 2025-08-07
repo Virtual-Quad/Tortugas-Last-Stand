@@ -17,9 +17,10 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_tqdv6"]
 radius = 54.0833
 
-[node name="CannonBall" type="Node2D" node_paths=PackedStringArray("cannon_ball_sprite")]
+[node name="CannonBall" type="Node2D" node_paths=PackedStringArray("cannon_ball_sprite", "life_timer")]
 script = ExtResource("1_4105j")
 cannon_ball_sprite = NodePath("AnimatedSprite2D")
+life_timer = NodePath("LifeTimer")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_jlhnd")
@@ -29,3 +30,7 @@ sprite_frames = SubResource("SpriteFrames_jlhnd")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, -2)
 shape = SubResource("CircleShape2D_tqdv6")
+
+[node name="LifeTimer" type="Timer" parent="."]
+
+[connection signal="timeout" from="LifeTimer" to="." method="_on_life_timer_timeout"]
