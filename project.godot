@@ -35,6 +35,11 @@ left_click={
 ]
 }
 
+[physics]
+
+2d/default_gravity=0.0
+2d/default_gravity_vector=Vector2(0, 0)
+
 [rendering]
 
 textures/vram_compression/import_s3tc_bptc=true

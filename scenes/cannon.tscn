@@ -1,9 +1,39 @@
-[gd_scene load_steps=2 format=3 uid="uid://ypvlm1ywvg3u"]
+[gd_scene load_steps=4 format=3 uid="uid://ypvlm1ywvg3u"]
 
 [ext_resource type="Script" uid="uid://cx772lxj3svjt" path="res://scripts/cannon.gd" id="1_xuqfy"]
+[ext_resource type="Texture2D" uid="uid://cm3mwcqx0c616" path="res://sprites/cannon.png" id="2_pxhkx"]
 
-[node name="Cannon" type="Node2D" node_paths=PackedStringArray("cannonSprite")]
+[sub_resource type="SpriteFrames" id="SpriteFrames_yjxeu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_pxhkx")
+}],
+"loop": true,
+"name": &"fire",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_pxhkx")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="Cannon" type="Node2D" node_paths=PackedStringArray("cannon_sprite", "cannon_ball_fire_point")]
 script = ExtResource("1_xuqfy")
-cannonSprite = NodePath("AnimatedSprite2D")
+cannon_sprite = NodePath("AnimatedSprite2D")
+cannon_ball_fire_point = NodePath("CannonBallFirePoint")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_yjxeu")
+animation = &"fire"
+
+[node name="FireTimer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[node name="CannonBallFirePoint" type="Node2D" parent="."]
+position = Vector2(0, -200)
