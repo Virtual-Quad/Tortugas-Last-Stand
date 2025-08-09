@@ -14,7 +14,6 @@ func _process(delta: float) -> void:
 func set_direction(cursor_vector: Vector2) -> void:
 	direction = cursor_vector
 
-
 func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
 	Log.debug("Cannon ball freed after exiting screen.")
 	queue_free()
