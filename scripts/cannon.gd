@@ -12,11 +12,10 @@ func _process(_delta: float) -> void:
 		fire()
 
 func fire() -> void:
-	cannon_logger.info("Firing cannon.")
-	
 	cannon_sprite.play("fire")
 	
 	var firing_vector: Vector2 = get_firing_vector()
+	cannon_logger.debug("Firing cannon at vector: ", firing_vector)
 	create_cannon_ball(firing_vector)
 
 func get_firing_vector() -> Vector2:
