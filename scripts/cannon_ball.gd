@@ -9,6 +9,7 @@ class_name CannonBall
 var direction: Vector2 = Vector2.ZERO
 
 func _ready() -> void:
+	# TODO: This should probably go in a more global class
 	if Log.current_log_level != Log.LogLevel.DEBUG:
 		Log.current_log_level = Log.LogLevel.DEBUG
 
