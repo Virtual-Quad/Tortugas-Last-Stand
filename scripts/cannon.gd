@@ -4,8 +4,8 @@ class_name Cannon
 @export var cannon_sprite: AnimatedSprite2D
 @export var cannon_ball_fire_point: Node2D
 
-@onready var cannon_ball_scene := preload("res://scenes/cannon_ball.tscn")
-@onready var cannon_logger := LogStream.new("Cannon Logger", LogStream.LogLevel.DEBUG)
+@onready var cannon_ball_scene: PackedScene = preload("res://scenes/cannon_ball.tscn")
+@onready var cannon_logger: LogStream = LogStream.new("Cannon Logger", LogStream.LogLevel.DEBUG)
 
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("left_click"):

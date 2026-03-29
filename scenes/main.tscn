@@ -1,10 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://b1dsuo1dw25rr"]
+[gd_scene format=3 uid="uid://b1dsuo1dw25rr"]
 
 [ext_resource type="PackedScene" uid="uid://ypvlm1ywvg3u" path="res://scenes/cannon.tscn" id="1_o5qli"]
 
-[node name="Main" type="Node2D"]
+[node name="Main" type="Node2D" unique_id=380494050]
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=787898984]
 zoom = Vector2(0.5, 0.5)
 
-[node name="Cannon" parent="." instance=ExtResource("1_o5qli")]
+[node name="Cannon" parent="." unique_id=364859463 instance=ExtResource("1_o5qli")]
